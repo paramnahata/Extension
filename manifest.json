@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Study & Task Manager (Param)",
+  "description": "Notes + Tasks with reminders, priorities, search, sort, pins, import/export, and daily study nudge.",
+  "version": "1.0.0",
+  "permissions": [
+    "notifications",
+    "storage",
+    "alarms",
+    "contextMenus"
+  ],
+  "action": {
+    "default_title": "Study & Task Manager",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  }
+}

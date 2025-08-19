@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Study & Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="row space">
+    <h2>📚 Study & Tasks</h2>
+    <div class="row gap">
+      <button id="exportBtn" title="Export data">Export</button>
+      <label class="file-btn" title="Import data">
+        Import
+        <input type="file" id="importFile" accept="application/json" hidden />
+      </label>
+      <button id="toggleTheme" title="Toggle theme">🌓</button>
+      <a id="openOptions" href="options.html" target="_blank" title="Options">⚙️</a>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="tasks" class="active">Tasks</button>
+    <button data-tab="notes">Notes</button>
+  </nav>
+
+  <section id="tasks" class="tab active">
+    <div class="card">
+      <div class="row wrap gap">
+        <input id="taskTitle" placeholder="What to do?" />
+        <input id="taskDue" type="datetime-local" />
+        <select id="taskPriority">
+          <option value="low">🟢 Low</option>
+          <option value="medium">🟠 Medium</option>
+          <option value="high">🔴 High</option>
+        </select>
+        <label class="row mid gap"><input type="checkbox" id="taskPin"> Pin</label>
+        <button id="addTask">Add</button>
+      </div>
+      <div class="row wrap gap top-pad">
+        <input id="taskSearch" placeholder="Search tasks..." />
+        <select id="taskSort">
+          <option value="dueAsc">Due ↑</option>
+          <option value="dueDesc">Due ↓</option>
+          <option value="prio">Priority</option>
+          <option value="created">Created</option>
+        </select>
+        <select id="taskFilter">
+          <option value="all">All</option>
+          <option value="open">Open</option>
+          <option value="done">Done</option>
+          <option value="pinned">Pinned</option>
+          <option value="today">Due Today</option>
+        </select>
+      </div>
+      <div id="progressWrap" class="progress-wrap">
+        <div id="progressBar" class="progress-bar"></div>
+        <span id="progressText" class="progress-text"></span>
+      </div>
+      <ul id="taskList" class="list"></ul>
+    </div>
+  </section>
+
+  <section id="notes" class="tab">
+    <div class="card">
+      <div class="row wrap gap">
+        <input id="noteTitle" placeholder="Note title" />
+        <textarea id="noteBody" rows="3" placeholder="Write your note..."></textarea>
+        <label class="row mid gap"><input type="checkbox" id="notePin"> Pin</label>
+        <button id="addNote">Add</button>
+      </div>
+      <div class="row wrap gap top-pad">
+        <input id="noteSearch" placeholder="Search notes..." />
+        <select id="noteSort">
+          <option value="updated">Last updated</option>
+          <option value="pinned">Pinned first</option>
+          <option value="title">Title A→Z</option>
+        </select>
+      </div>
+      <ul id="noteList" class="list"></ul>
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>

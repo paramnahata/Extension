@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Study & Task Manager — Options</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>⚙️ Options</h2>
+  <div class="card">
+    <label class="row mid gap">
+      <input type="checkbox" id="dailyNudgeEnabled">
+      Enable daily Study Nudge notification
+    </label>
+    <div class="row mid gap top-pad">
+      <label>Time (24h): <input type="time" id="dailyNudgeTime" value="21:00"></label>
+      <button id="saveOpt">Save</button>
+    </div>
+    <p class="sub top-pad">Daily nudge sends a gentle reminder to review notes or plan tasks.</p>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
